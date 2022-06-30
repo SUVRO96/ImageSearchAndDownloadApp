@@ -15,30 +15,25 @@ const Pagination = ({ totalimages, imageperpage, paginate }) => {
       <nav>
         <ul className="pagination bg-dark">
           <li className="page-item">
-            <a className="page-link" href="!#">
-              &#60;Prev
-            </a>
+            <button className="page-link">&#60;Prev</button>
           </li>
           {pageNumbers &&
             pageNumbers.map(pageNumber => {
               return (
                 <li key={pageNumber} className="page-item">
-                  <a
+                  <button
                     onClick={() => {
                       paginate(pageNumber);
                     }}
-                    href="!#"
                     className="page-link"
                   >
                     {pageNumber}
-                  </a>
+                  </button>
                 </li>
               );
             })}
           <li className="page-item">
-            <a className="page-link" href="!#">
-              Next&#62;
-            </a>
+            <button className="page-link">Next&#62;</button>
           </li>
         </ul>
       </nav>
