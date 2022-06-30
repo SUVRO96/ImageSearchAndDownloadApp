@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Pagination from "../components/Pagination";
+import Pagination from "./pagination/Pagination";
 import ImageResults from "./ImageResults";
 
 const Search = () => {
@@ -35,7 +35,7 @@ const Search = () => {
     const fetchImages = async () => {
       try {
         const res = await axios.get(
-          `https://pixabay.com/api/?key=${key}&q=${search}&image_type=photos&min_width=640&per_page=${imagPerPage}&page=${currentPage}&safesearch=${safe}`
+          `https://pixabay.com/api/?key=${key}&q=${search}&image_type=photo&min_width=640&per_page=${imagPerPage}&page=${currentPage}&safesearch=${safe}`
         );
         setImages(res.data.hits);
         setTotalImages(res.data.totalHits);
@@ -49,7 +49,9 @@ const Search = () => {
   return (
     <>
       <div className="toggle-container col my-3 position-absolute end-0 text-light">
-        <span>Safe-Search</span>
+        <span style={{ position: "relative", bottom: "0.3rem" }}>
+          Safe-Search
+        </span>
         <div className="toggler">
           <label className="switch">
             <input type="checkbox" defaultChecked={safe} onChange={isSafe} />
@@ -84,6 +86,7 @@ const Search = () => {
         imageperpage={imagPerPage}
         totalimages={totalImages}
         paginate={paginate}
+        currentpage={currentPage}
       />
     </>
   );

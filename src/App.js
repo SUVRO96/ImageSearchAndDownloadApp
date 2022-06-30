@@ -5,13 +5,15 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App bg-dark">
-      <br />
-      <h1>imgDb</h1>
-      <Search />
-      <br />
-      <Footer />
-    </div>
+    <>
+      <div className="App bg-dark">
+        <br />
+        <h1>myImg</h1>
+        <Search />
+        <br />
+        <Footer />
+      </div>
+    </>
   );
 }
 
