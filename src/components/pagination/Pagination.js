@@ -1,11 +1,11 @@
 import React from "react";
 import "./page.css";
 
-const Pagination = ({ totalimages, imageperpage, paginate }) => {
+const Pagination = ({ totalimages, imageperpage, paginate, prev, next }) => {
   const pageNumbers = [];
 
   const pageMaker = () => {
-    for (let i = 1; i < Math.ceil(totalimages / imageperpage); i++) {
+    for (let i = 1; i <= Math.ceil(totalimages / imageperpage); i++) {
       pageNumbers.push(i);
     }
   };
@@ -15,7 +15,9 @@ const Pagination = ({ totalimages, imageperpage, paginate }) => {
     <nav>
       <ul className="pagination-u">
         <li>
-          <button className="pagi-item">&laquo;</button>
+          <button className="pagi-item" onClick={prev}>
+            &laquo;
+          </button>
         </li>
         {pageNumbers &&
           pageNumbers.map(pageNumber => {
@@ -23,7 +25,7 @@ const Pagination = ({ totalimages, imageperpage, paginate }) => {
               <li key={pageNumber} className="page-item">
                 <button
                   className="pagi-item"
-                  onClick={e => {
+                  onClick={() => {
                     paginate(pageNumber);
                   }}
                 >
@@ -33,7 +35,9 @@ const Pagination = ({ totalimages, imageperpage, paginate }) => {
             );
           })}
         <li>
-          <button className="pagi-item">&raquo;</button>
+          <button className="pagi-item" onClick={next}>
+            &raquo;
+          </button>
         </li>
       </ul>
     </nav>

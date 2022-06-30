@@ -30,6 +30,18 @@ const Search = () => {
     setCurrentPage(pageNumber);
   };
 
+  const prev = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const next = () => {
+    let totalPage = Math.ceil(totalImages / imagPerPage);
+    if (currentPage < totalPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   // api call
   useEffect(() => {
     const fetchImages = async () => {
@@ -74,6 +86,8 @@ const Search = () => {
         imageperpage={imagPerPage}
         totalimages={totalImages}
         paginate={paginate}
+        prev={prev}
+        next={next}
       />
       <br />
       {images.length > 0 ? (
@@ -87,6 +101,8 @@ const Search = () => {
         totalimages={totalImages}
         paginate={paginate}
         currentpage={currentPage}
+        prev={prev}
+        next={next}
       />
     </>
   );
