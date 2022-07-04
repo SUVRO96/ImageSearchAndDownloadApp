@@ -22,7 +22,7 @@ const Pagination = ({
     <nav>
       <ul className="pagination-u">
         <li>
-          <button className="pagi-item active" onClick={prev}>
+          <button className="pagi-item extra" onClick={prev}>
             &laquo;
           </button>
         </li>
@@ -44,7 +44,7 @@ const Pagination = ({
             );
           })}
         <li>
-          <button className="pagi-item active" onClick={next}>
+          <button className="pagi-item extra" onClick={next}>
             &raquo;
           </button>
         </li>
