@@ -23,7 +23,7 @@ li {
 }
 .pagi-item {
   background-color: darkslategray;
-  color: aqua;
+  color: whitesmoke;
   float: left;
   display: block;
   font-size: 14px;
@@ -50,5 +50,12 @@ li {
 }
 
 .pagi-item:hover {
+  background-color: #51e0e0;
+  color: darkslategray;
+}
+
+.active {
+  cursor: default;
   background-color: #4dad16;
+  color: white;
 }

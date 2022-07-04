@@ -1,7 +1,14 @@
 import React from "react";
 import "./page.css";
 
-const Pagination = ({ totalimages, imageperpage, paginate, prev, next }) => {
+const Pagination = ({
+  totalimages,
+  imageperpage,
+  paginate,
+  prev,
+  next,
+  active,
+}) => {
   const pageNumbers = [];
 
   const pageMaker = () => {
@@ -15,16 +22,18 @@ const Pagination = ({ totalimages, imageperpage, paginate, prev, next }) => {
     <nav>
       <ul className="pagination-u">
         <li>
-          <button className="pagi-item" onClick={prev}>
+          <button className="pagi-item active" onClick={prev}>
             &laquo;
           </button>
         </li>
         {pageNumbers &&
           pageNumbers.map(pageNumber => {
             return (
-              <li key={pageNumber} className="page-item">
+              <li key={pageNumber}>
                 <button
-                  className="pagi-item"
+                  className={
+                    active === pageNumber ? "pagi-item active" : "pagi-item"
+                  }
                   onClick={() => {
                     paginate(pageNumber);
                   }}
@@ -35,7 +44,7 @@ const Pagination = ({ totalimages, imageperpage, paginate, prev, next }) => {
             );
           })}
         <li>
-          <button className="pagi-item" onClick={next}>
+          <button className="pagi-item active" onClick={next}>
             &raquo;
           </button>
         </li>

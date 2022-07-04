@@ -17,6 +17,7 @@ const Search = () => {
   const handleChange = e => {
     const val = e.target.value;
     setSearch(val);
+    setCurrentPage(1);
   };
   // set safe Search
   const isSafe = e => {
@@ -88,6 +89,7 @@ const Search = () => {
         paginate={paginate}
         prev={prev}
         next={next}
+        active={currentPage}
       />
       <br />
       {images.length > 0 ? (
@@ -100,9 +102,9 @@ const Search = () => {
         imageperpage={imagPerPage}
         totalimages={totalImages}
         paginate={paginate}
-        currentpage={currentPage}
         prev={prev}
         next={next}
+        active={currentPage}
       />
     </>
   );
