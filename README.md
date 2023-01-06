@@ -1,7 +1,6 @@
-## Project Name & Pitch
+## Image Search App
 
-  Image Search App
-
+  
  * An application for r searching and downloading photos, built with React, JavaScript, CSS and Bootsatrap.
  * Features
       * Search bar for searching required image category
