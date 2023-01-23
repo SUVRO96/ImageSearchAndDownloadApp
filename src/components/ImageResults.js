@@ -35,7 +35,7 @@ const ImageResults = props => {
           &times;
         </span>
         <img class="modal-content" id="img01" src={currentUrl} alt="No_image" />
-        <button class="save-btn btn btn-dark btn-lg" onClick={saveFile}>
+        <button class="save-btn btn btn-dark btn-lg" onClick={() => saveFile}>
           <i class="fa-solid fa-circle-arrow-down"></i> Download
         </button>
       </div>
